@@ -1,0 +1,78 @@
+body{
+    width: 100%;
+}
+.left{
+    width: 50%;
+}
+img{
+    position: fixed;
+    top: 5%;
+    left: 2%;
+    width: 45%;
+    height: 90%;
+    object-fit: contain;
+    background: #ffffff;
+
+}
+
+.right{
+    margin-left: 50%;
+}
+.delete{
+    background-color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+button{
+    /* margin-left: 65%; */
+    margin-top: 90px;
+    background-color: black;
+    color: #ffffff;
+    padding: 10px;
+    border-radius:5px;
+    text-align: center;
+}
+h2{
+    color: black;
+    font-family: Academy Engraved LET;
+    font-size: 70px;
+    text-align: center;
+    margin:120px auto auto 0;
+}
+
+.fantaro_form{
+    text-align: center;
+}
+.delete{
+        background-color: black;
+        color: #ffffff;
+        padding: 10px;
+        border-radius:5px;
+        position: fixed;
+        top: 30px;
+        right:40px; 
+}
+.a select,.form select{
+    margin-top: 90px;
+    background-color: black;
+    color: #ffffff;
+    padding: 10px;
+    border-radius:5px;
+    text-align: center;
+}
+.coment{
+    background-color: black;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.photo_list{
+    position: fixed;
+
+}
+.form-control{
+    border: 1px solid black ;
+}
+p {
+    color: black;
+}

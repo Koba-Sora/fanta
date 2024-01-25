@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/member.css' %}">
+    <meta charset="UTF-8">
+    <title>SEKAI</title>
+</head>
+<body>
+<div class="member">   
+    <div class="harf">
+        <figure>
+            <img src="{% static 'fanta/images/menbers/sekai2.jpg' %}" class="main">
+            <figcaption>SEKAI</figcaption>
+        </figure>
+    </div>
+    <div class="harf">
+        <div class="profile">
+            <h2>profile</h2>
+            <ol>
+                <li>誕生日：1991年2月21日</li>
+                <li>出身地：神奈川県</li>
+                <li>血液型：B</li>
+            </ol>
+            <div class="sns">
+                <a href="https://twitter.com/sekai_official_">
+                    <img src="{% static 'fanta/images/ikon/x.png' %}" alt="個人x公式">
+                </a>
+                <a href="https://www.instagram.com/exile_sekai_official/" > 
+                    <img src="{% static 'fanta/images/ikon/instagram.png' %}" alt="個人Instagram">
+                </a>
+            </div>
+            <!-- <a href="../fanta.html" class="mdr">元のページに戻る</a> -->
+        </div>
+    </dev>
+</div>
+
+<footer>
+{% endblock content %}

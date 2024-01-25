@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/member.css' %}">
+    <meta charset="UTF-8">
+    <title>KEITO KIMURA</title>
+</head>
+<body>
+<div class="member">   
+    <div class="harf">
+        <figure>
+            <img src="{% static 'fanta/images/menbers/keito2.jpg' %}" class="main">
+            <figcaption>KEITO KIMURA</figcaption>
+        </figure>
+    </div>
+    <div class="harf">
+        <div class="profile">
+            <h2>profile</h2>
+            <ol>
+                <li>誕生日：1999年8月16日</li>
+                <li>出身地：東京都</li>
+                <li>血液型：A</li>
+            </ol>
+            <div class="sns">
+                <a href="https://www.youtube.com/channel/UCb28YH8ecpnmK4wvUTmDbGA/videos">
+                    <img src="{% static 'fanta/images/ikon/youtube.png' %}" alt="個人youtube公式">
+                </a>
+                <a href="https://www.instagram.com/keitokimura_official/" > 
+                    <img src="{% static 'fanta/images/ikon/instagram.png' %}" alt="個人Instagram">
+                </a>
+            </div>
+            <!-- <a href="../fanta.html" class="mdr">元のページに戻る</a> -->
+        </div>
+    </dev>
+</div>
+
+<footer>
+{% endblock content %}

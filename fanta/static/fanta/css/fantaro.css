@@ -1,0 +1,92 @@
+body{
+    width: 80%;
+    margin: 0 auto;
+}
+.img-photo{
+    height: 300px;
+    padding: 2px 0;
+}
+.img-photo:hover {
+    opacity: 0.6;
+}
+
+.photo_list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+header{
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    position: fixed;
+    height: 70px;
+    margin: 0 auto;
+}
+menu{
+    display: flex;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    width: 25%;
+    justify-content: space-evenly;
+    margin-left: 58%;
+    padding-top: 20px;
+    font-family: Academy Engraved LET;
+    font-size: 20px;
+    margin-top: 0px;
+}
+menu a{
+    border: 1px solid black;
+    padding: 12px 8px 2px 8px;
+}
+menu a:hover {
+    opacity: 0.5;
+}
+
+h2{
+    text-align: left;
+    color: black;
+    font-family: Academy Engraved LET;
+    font-size: 70px;
+    padding-top: 90px;
+}
+
+menu a{
+    text-align: right;
+}
+.post_form{
+    margin-bottom: 10px;
+}
+.post_form p{
+    padding: 20px 20px;
+    text-align: left;
+    font-size: large;
+    font-family: Academy Engraved LET;
+}
+.new_post{
+    margin-top: 30px;
+    font-family: Academy Engraved LET;
+
+}
+.fantaro_form{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+.fantaro_form h2{
+    text-align: center;
+}
+label{
+    font-size: 40px;
+}
+select{
+    margin-top: -15px;
+    font-family: monospace;
+    font-size: 28px;
+}
+input.post_button{
+    font-family: Academy Engraved LET;
+    font-size: 30px;
+    padding: 14px 10px 4px;
+    margin-top: 50px;
+    border: 1px solid black;
+}

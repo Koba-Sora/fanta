@@ -1,0 +1,19 @@
+
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/fantaro.css' %}">
+    <meta charset="UTF-8">
+    <title>FANTATO</title>
+</head>
+<div class="fantaro_form">
+<body>
+
+    <h2 class="new_post">New Posts</h2>
+        <form method='post' enctype="multipart/form-data" class="post_form">{% csrf_token %}    
+            {{form.as_p}}
+            <input type="submit" value="POST" class="post_button">
+        </form>
+</div>
+</body>

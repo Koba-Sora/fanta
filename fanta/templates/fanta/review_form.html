@@ -1,0 +1,23 @@
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/detail.css' %}">
+    <meta charset="UTF-8">
+    <title>coment</title>
+</head>
+<body>
+    <img src="{{ photo.photo.url }}">
+    <div class="right">
+        <form method="post">
+            {% csrf_token %}
+            <label>左の画像にコメントする</label>
+            <br>
+            <label>コメント</label>
+            <br>
+            <textarea class="form-control" name="text" rows="3"></textarea>
+            <input type="hidden" name ='photo' value="{{ photo.id }}">
+            <button type="submit" class="btn-success mt-4">投稿する</button>
+        </form>
+    </div>
+</body>

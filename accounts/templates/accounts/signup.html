@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/accounts.css' %}">
+    <meta charset="UTF-8">
+    <title>SINGUP</title>
+ </head>
+ <h1 class="h1">SINGUP</h1>
+<form method="post" form-group class="form">
+    {% csrf_token %}
+    <div>
+        <label >ユーザーID</label><br>
+        <input type="text" name="username" class="id_ps2" placeholder="ユーザーID">
+    </div>
+    <div>
+        <label >パスワード</label><br>
+        <input type="password" name="password1" class="id_ps2" placeholder="パスワード">
+    </div>
+    <div>
+        <label >パスワード確認用</label><br>
+        <input type="password" name="password2" class="id_ps2" placeholder="パスワード確認用">
+    </div>
+    <div class="ps">
+        <small >パスワードは８文字以上で設定してください</small><br>
+    </div>
+    <div>
+        {% if form.errors %}
+        <span>利用できないユーザーIDやパスワードの可能性があります。<br>入力内容を再度ご確認ください。</span>
+        {% endif %}
+    </div>
+    <button type="submit" class="btn btn-success m-2">アカウント作成</button>
+    </form>
+{% endblock %}
+

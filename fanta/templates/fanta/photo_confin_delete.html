@@ -1,0 +1,30 @@
+
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/detail.css' %}">
+    <meta charset="UTF-8">
+    <title>FANTATO</title>
+</head>
+<div class="fantaro_form">
+<body>
+    <div class="right">
+        <img src="{{ object.photo.url }}">
+        <h2 class="new_post">Delete Posts</h2>
+        <form method='post' enctype="multipart/form-data" class="post_form">{% csrf_token %}    
+            {{form.as_p}}
+            <img src="{{ object.photo.url }}">
+            <div class="select">
+            <button type="submit">左の画像を削除する</button>
+        </form>
+        <br>
+        <form>
+            
+                <button><a href="{% url 'fantaro' %}">やっぱりやめる</a></button>
+            
+        </form>
+    </div>
+    </div>
+</div>
+</body>

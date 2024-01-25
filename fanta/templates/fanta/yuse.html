@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/member.css' %}">
+    <meta charset="UTF-8">
+    <title>YUSE YAGI</title>
+</head>
+<body>
+<div class="member">   
+    <div class="harf">
+        <figure>
+            <img src="{% static 'fanta/images/menbers/yuse2.jpg' %}" class="main">
+            <figcaption>YUSE YAGI</figcaption>
+        </figure>
+    </div>
+    <div class="harf">
+        <div class="profile">
+            <h2>profile</h2>
+            <ol>
+                <li>誕生日：1997年5月6日</li>
+                <li>出身地：東京都</li>
+                <li>血液型：O</li>
+            </ol>
+            <div class="sns">
+                <a href="https://twitter.com/yuseiyagi_1st">
+                    <img src="{% static 'fanta/images/ikon/x.png' %}" alt="個人x公式サイト">
+                </a>
+                <a href="https://www.instagram.com/yuseiyagi_official/?hl=ja">
+                    <img src="{% static 'fanta/images/ikon/instagram.png' %}">
+                </a>
+            </div>
+            <!-- <a href="../fanta.html" class="mdr">元のページに戻る</a> -->
+        </div>
+    </dev>
+</div>
+<footer>
+{% endblock content %}

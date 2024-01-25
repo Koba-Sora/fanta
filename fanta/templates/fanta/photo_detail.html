@@ -1,0 +1,29 @@
+{% load static %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/detail.css' %}">
+    <meta charset="UTF-8">
+    <title>FANTATO</title>
+</head>
+<body>
+<div class="left">
+    <img src="{{ object.photo.url }}">
+</div>
+<div class="right">
+    <div class="photo_list">
+        <a href="{% url 'review' photo_id=object.pk %}" class="coment">コメントする</a>
+        {% if request.user == object.user %}
+            <a href='delete' class="delete">画像を削除する</a>
+        {% endif %}
+    </div>
+    <div class="coment_list">
+        {% for review in object_list|slice:"::-1" %}
+        <div>
+            <p>{{ review.text }}</p>
+            <span>(投稿ユーザー:{{ review.user.username }})</span>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'fanta/css/fanta.css' %}">
+
+    <meta charset="UTF-8">
+    <title>FANTASTICS</title>
+</head>
+<body>
+<header>
+<menu>
+    <a href="#FANTASTICS">FANTASTICS</a>
+    <a href="#MENBER">MENBER</a>
+    <!-- <a href="#SONGS">SONGS</a> -->
+    <a href="#FAN_SPASE">FAN SPASE</a>
+
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'accounts:logout' %}">LOGOUT</a>
+        {% else %}
+        <a href="{% url 'accounts:login' %}">LOGIN</a>
+        <!-- <a href="{% url 'accounts:signup' %}">SINGUP</a> -->
+        {% endif %}
+
+</menu>
+</header>
+
+<section>
+<div class="fantastics">
+    <img src="{% static 'fanta/images/fanta.jpg' %}" alt="FANTASTICSメインビジュアル" class="main_bijual">
+
+    <h2 a id="FANTASTICS">FANTASTICS from EXILE TRIBE</h2>
+   <p>EXILEの想い・信念を受け継ぐダンス＆ボーカルグループ。
+    2016年12月29日、EXILEのパフォーマー世界、佐藤大樹をリーダーに、EXPGから選出された澤本夏輝、瀬口黎弥、中尾翔太、堀夏喜、木村慧人でパフォーマー集団として結成。<br>
+    
+    全国14都市18会場50公演、約3万人動員をした武者修行を完遂し、グループとして大きく飛躍し新たなステージに進むため、ボーカルを迎えることを決意。
+    2017年5月から12月にかけて「EXILE Presents VOCAL BATTLE AUDITION 5 ～夢を持った若者達へ～」を開催し、
+    約3万名の応募者の中から勝ち上がった『八木勇征』『中島颯太』という2名のボーカリストが加入した。<br>
+    
+    パフォーマーはリーダーを務める世界・佐藤大樹、そして澤本夏輝・瀬口黎弥・堀夏喜・木村慧人の6名、ボーカルは八木勇征・中島颯太の2名の合わせて8名で活動している。
+    各個人としてもグループとしても着々と活動の場を広げ、更なる成長を目指す今、注目のダンス＆ボーカルグループである。</p>
+</div>
+</section>
+<section>
+<div class="member">
+    <h2 a id="MENBER">MEMBER</h2>
+<ul>
+
+        <div class="photo">
+            <li>
+                <a href="sekai/">
+                <img src="{% static 'fanta/images/menberface/sekai.jpg' %}">
+                <p>世界</p></a>
+            </li>
+            <li>
+                <a href="taiki/">
+                <img src="{% static 'fanta/images/menberface/taiki.jpg' %}">
+                <p>佐藤大樹</p></a>
+            </li>
+            <li>
+                <a href="sawanatsu/">
+                <img src="{% static 'fanta/images/menberface/sawanatsu.jpg' %}">
+                <p>澤本夏輝</p></a>
+            </li>
+        </div>
+
+        <div class="photo">
+            <li>
+                <a href="reiya/">
+                <img src="{% static 'fanta/images/menberface/reiya.jpg' %}">
+                <p>瀬口黎弥</p></a>
+            </li>
+            <li>
+                <a href="horinatsu/">
+                <img src="{% static 'fanta/images/menberface/horinatsu.jpg' %}">
+                <p>堀夏喜</p></a>
+            </li>
+            <li>
+                <a href="keito/">
+                <img src="{% static 'fanta/images/menberface/keito.jpg' %}">
+                <p>木村慧人</p></a>
+            </li>
+        </div>
+
+        <div class="photo">
+            <li>
+                <a href="yuse/">
+                <img src="{% static 'fanta/images/menberface/yuse.jpg' %}">
+                <p>八木勇征</p></a>
+            </li>
+            <li>
+                <a href="sota/">
+                <img src="{% static 'fanta/images/menberface/sota.jpg' %}">
+                <p>中島颯太</p></a>
+            </li>
+            <li>
+                <a href="shota/">
+                <img src="{% static 'fanta/images/menberface/shota.jpg' %}">
+                <p>中尾翔太</p></a>
+            </li>
+        </div>
+
+</ul>
+</div>
+</section>
+
+<section class="FAN_SPASE">
+    <h2 a id="FAN_SPASE">FAN SPASE</h2>
+    <div class="loop_wrap">
+        <ul>
+            <li>
+                <img src="{% static 'fanta/images/panoramajet.jpeg' %}" alt="" />CAR</a>
+            </li>
+            
+            <li>
+                <img src="{% static 'fanta/images/BABY ROSE.PNG' %}" alt="" />CITY</a>
+            </li>
+            <li>
+                <img src="{% static 'fanta/images/fanta.jpg' %}" alt="" />CITY</a>
+            </li>
+            <li>
+                <img src="{% static 'fanta/images/fanta_main.jpeg' %}" alt="" />CITY</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <img src="{% static 'fanta/images/panoramajet.jpeg' %}" alt="" />CAR</a>
+            </li>
+            
+            <li>
+                <img src="{% static 'fanta/images/BABY ROSE.PNG' %}" alt="" />CITY</a>
+            </li>
+            <li>
+                <img src="{% static 'fanta/images/fanta.jpg' %}" alt="" />CITY</a>
+            </li>
+            <li>
+                <img src="{% static 'fanta/images/fanta_main.jpeg' %}" alt="" />CITY</a>
+            </li>
+        </ul>
+      </div>
+
+      <a href="fantaro/" class="fantaro">FANTAROの投稿を見る</a>
+</section>
+
+
+<section>
+<footer>
+    <div class="foo">
+        <img src="{% static 'fanta/images/fanta_logo.png' %}" >
+    <div class="sns">
+        <ul>
+            <li ><a href="https://twitter.com/fantastics_fext?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="{% static 'fanta/images/ikon/x.png' %}"></a></li>
+            <li><a href="https://www.instagram.com/fantastics_fext/?hl=ja"><img src="{% static 'fanta/images/ikon/instagram.png' %}"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCsYSgrycXw3JySaCXi4H71A"><img src="{% static 'fanta/images/ikon/youtube.png' %}"></a></li>
+            <li><a href="https://www.tiktok.com/@fantastics_official"><img src="{% static 'fanta/images/ikon/tiktok.png' %}"></a></li>
+        </ul>
+    </div>
+    </div>
+    {% endblock content %}
+    <p class="foooo">©︎fanta_no_otaku</p>
+    </footer>
+</section>
+
+</body>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/fanta/css/member.css' %}">
+    <title>REIYA SEGUCHI</title>
+</head>
+<body>
+<div class="member">   
+    <div class="harf">
+        <figure>
+            <img src="{% static 'fanta/images/menbers/reiya2.jpg' %}" class="main">
+            <figcaption>REIYA SEGUCHI</figcaption>
+        </figure>
+    </div>
+    <div class="harf">
+        <div class="profile">
+            <h2>profile</h2>
+            <ol>
+                <li>誕生日：1996年3月11日</li>
+                <li>出身地：福岡県</li>
+                <li>血液型：A</li>
+            </ol>
+            <div class="sns">
+                <!-- <a href="">
+                    <img src="../images/ikon/x.png" alt="個人x公式">
+                </a> -->
+                <a href="https://www.instagram.com/leiya_seguchi_official/" > 
+                    <img src="{% static 'fanta/images/ikon/instagram.png' %}" alt="個人Instagram">
+                </a>
+            </div>
+            <!-- <a href="../fanta.html" class="mdr">元のページに戻る</a> -->
+        </div>
+    </dev>
+</div>
+<footer>
+{% endblock content %}

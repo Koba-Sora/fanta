@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
+   <link rel="stylesheet" href="{% static '/fanta/css/accounts.css' %}">
+   <meta charset="UTF-8">
+   <title>LOGIN</title>
+</head>
+<body>
+   <h1 class="h1">LOGIN</h1>
+   <form method="post" class="form">
+
+    <div>
+      <label >ユーザーID</label><br>
+      <input class="id_ps" name="username" placeholder="ユーザーID">
+   </div>
+   <div>
+      <label >パスワード</label><br>
+      <input type="password" class="id_ps" name="password" placeholder="パスワード">
+    </div>
+    {% csrf_token %}
+    {% for error in form.errors.values %}
+    <span>{{ error }}</span>
+    <span>ユーザー名またはパスワードが間違っています</span><br>
+    {% endfor %}
+    <button type="submit" class="btn">ログインする</button>
+   </form>
+
+    <p><a href="{% url 'accounts:signup' %}">新規アカウント作成はこちら</a></p>
+    {% endblock content %}
