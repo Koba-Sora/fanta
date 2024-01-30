@@ -4,20 +4,27 @@
     <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
     <link rel="stylesheet" href="{% static '/fanta/css/detail.css' %}">
     <meta charset="UTF-8">
-    <title>coment</title>
+    <title>Post a Comment</title>
 </head>
 <body>
-    <img src="{{ photo.photo.url }}">
+    <div class="left">
+        <img src="{{ photo.photo.url }}">
+    </div>
     <div class="right">
-        <form method="post">
+        <div class="h2-title">
+            <h2>Post a Comment</h2>
+        </div>
+        <div class="no-title">
+            <form method="post">
             {% csrf_token %}
-            <label>左の画像にコメントする</label>
-            <br>
-            <label>コメント</label>
-            <br>
-            <textarea class="form-control" name="text" rows="3"></textarea>
-            <input type="hidden" name ='photo' value="{{ photo.id }}">
-            <button type="submit" class="btn-success mt-4">投稿する</button>
-        </form>
+            <div class="text-box">
+                <textarea name="text" rows="10"></textarea>
+            </div>
+            <input type="hidden" name ='photo' value="{{ photo.id }}"><br>
+            <div class="btn-box">
+                <button type="submit" class="coment-btn">コメントする</button>
+            </div>
+            </form>
+        </div>
     </div>
 </body>

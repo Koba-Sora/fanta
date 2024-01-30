@@ -11,18 +11,33 @@
     <img src="{{ object.photo.url }}">
 </div>
 <div class="right">
-    <div class="photo_list">
-        <a href="{% url 'review' photo_id=object.pk %}" class="coment">コメントする</a>
-        {% if request.user == object.user %}
-            <a href='delete' class="delete">画像を削除する</a>
-        {% endif %}
+    <menu>
+        <a href="{% url 'index' %}">TOP</a>
+        <a href="{% url 'fantaro' %}">FANTARO</a>
+    </menu>
+    <div class="h2-title">
+        <h2>Comment</h2>
     </div>
-    <div class="coment_list">
-        {% for review in object_list|slice:"::-1" %}
-        <div>
-            <p>{{ review.text }}</p>
-            <span>(投稿ユーザー:{{ review.user.username }})</span>
-        {% endfor %}
+    <div class="no-title">
+        
+        
+        <div class="coment_list">
+        {% if reviews %}    
+            {% for review in reviews|slice:"::-1" %}
+                <div class="coment-box">
+                    <div><p class="coment-user">ユーザー名：{{ review.user.username }}</p></div>
+                    <div><p class="coment">{{ review.text }}</p></div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-coment">コメントはまだありません。</p>
+        {% endif %}
+        </div>
+        <div class="btn-box">
+            <a href="{% url 'review' photo_id=object.pk %}" class="coment-btn">コメントを追加する</a>
+            {% if request.user == object.user %}
+            <a href='delete' class="if-delete">画像を削除する</a>
+            {% endif %}
         </div>
     </div>
 </div>

@@ -5,26 +5,29 @@
     <link rel="stylesheet" href="{% static 'fanta/css/reset.css' %}">
     <link rel="stylesheet" href="{% static '/fanta/css/detail.css' %}">
     <meta charset="UTF-8">
-    <title>FANTATO</title>
+    <title>Delete Posts</title>
 </head>
-<div class="fantaro_form">
+
 <body>
-    <div class="right">
+    <div class="fantaro_form"></div>
         <img src="{{ object.photo.url }}">
-        <h2 class="new_post">Delete Posts</h2>
-        <form method='post' enctype="multipart/form-data" class="post_form">{% csrf_token %}    
-            {{form.as_p}}
-            <img src="{{ object.photo.url }}">
-            <div class="select">
-            <button type="submit">左の画像を削除する</button>
-        </form>
-        <br>
-        <form>
-            
-                <button><a href="{% url 'fantaro' %}">やっぱりやめる</a></button>
-            
-        </form>
+        <div class="right">
+            <div class="h2-title">
+                <h2>Delete Posts</h2>
+            </div>
+            <div class="no-title">
+                <form method='post' enctype="multipart/form-data" class="post_form">
+                    {% csrf_token %}    
+                    {{form.as_p}}
+                    <img src="{{ object.photo.url }}">
+                    <div class="select">
+                    <button type="submit" class="delete">左の画像を削除する</button>
+                </form>
+                <br>
+                <form>   
+                    <button class="delete"><a href="{% url 'fantaro' %}">やっぱりやめる</a></button>
+                </form>
+            </div>
+        </div>
     </div>
-    </div>
-</div>
 </body>

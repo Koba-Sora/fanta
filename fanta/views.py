@@ -41,20 +41,15 @@ class FantaroView(ListView):
     template_name = 'fanta/fantaro.html'
     model = Photo
 
-class DetailPhotoView(DetailView):
+class PhotoAndReviewView(DetailView):
     template_name = 'fanta/photo_detail.html'
     model = Photo
-    print('aaaaa')
-    
+    context_object_name = 'photo'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(context)
         photo = self.get_object()
-        print(photo)
-        context['photo'] = photo
-        print(context)
-        context['reviews'] = photo.review_set.all()  # Photoに関連する全てのReviewを取得
-        print(context)
+        context['reviews'] = photo.review_set.all() 
         return context
 
 class CreatePhotoView(LoginRequiredMixin,CreateView):
@@ -72,7 +67,7 @@ class DeletePhotoView(LoginRequiredMixin,DeleteView):
     model = Photo
     success_url = reverse_lazy('fantaro')
 
-class CreateReviewView(CreateView):
+class CreateReviewView(LoginRequiredMixin,CreateView):
     template_name = 'fanta/review_form.html'
     model = Review
     fields = ('photo','text',)
