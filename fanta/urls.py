@@ -1,5 +1,6 @@
 from django.urls import path,include
 from . import views
+
 app_name = 'fanta'
 urlpatterns = [
     path('',views.index_view,name='index'),
@@ -17,6 +18,6 @@ urlpatterns = [
     path('fantaro/create/',views.CreatePhotoView.as_view(),name='create'),
     path('fantaro/<int:pk>/detail/delete/',views.DeletePhotoView.as_view(),name='delete'),
     path('fantaro/<int:photo_id>/review/',views.CreateReviewView.as_view(),name='review'),
-    
+
 
 ]

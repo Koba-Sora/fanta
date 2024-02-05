@@ -9,7 +9,7 @@
 <body>
     <header>
         <menu>
-            <a href="{% url 'index' %}">TOP</a>
+            <a href="{% url 'fanta:index' %}">TOP</a>
             <a href="create">新規投稿</a>
         </menu>
     </header>
@@ -17,7 +17,7 @@
     <h2>FANTARO</h2>
     <div class="photo_list">
         {% for item in object_list|slice:"::-1" %}
-            <a href="{% url 'detail' item.pk %}">
+            <a href="{% url 'fanta:detail' item.pk %}">
                 <img src="{{ item.photo.url }}"  class="img-photo">
             </a>
         {% endfor %}

@@ -22,7 +22,7 @@
     </div>
     {% csrf_token %}
     {% for error in form.errors.values %}
-    <span>{{ error }}</span>
+    <!-- <span>{{ error }}</span> -->
     <span>ユーザー名またはパスワードが間違っています</span><br>
     {% endfor %}
     <button type="submit" class="btn">ログインする</button>

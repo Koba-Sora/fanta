@@ -56,7 +56,7 @@ class CreatePhotoView(LoginRequiredMixin,CreateView):
     template_name = 'fanta/photo_create.html'
     model = Photo
     fields = ('member','photo')
-    success_url = reverse_lazy('fantaro')
+    success_url = reverse_lazy('fanta:fantaro')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -65,7 +65,7 @@ class CreatePhotoView(LoginRequiredMixin,CreateView):
 class DeletePhotoView(LoginRequiredMixin,DeleteView):
     template_name = 'fanta/photo_confin_delete.html'
     model = Photo
-    success_url = reverse_lazy('fantaro')
+    success_url = reverse_lazy('fanta:fantaro')
 
 class CreateReviewView(LoginRequiredMixin,CreateView):
     template_name = 'fanta/review_form.html'
@@ -82,4 +82,4 @@ class CreateReviewView(LoginRequiredMixin,CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('detail',kwargs={'pk':self.object.photo.id})
+        return reverse('fanta:detail',kwargs={'pk':self.object.photo.id})

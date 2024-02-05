@@ -13,8 +13,8 @@ body{
 }
 
 .main{
-    width: auto;
-    height: 740px;
+    width: 65%;
+    height: auto;
     padding-block:center ;
     margin: 20px auto;
     display: block;
@@ -52,18 +52,10 @@ li{
     text-align: left;
     margin: 40px 0;
 }
-/* .foooo{
-    font-size: 20px;
-    text-align: center;
-    background-color: #949494;
-    padding: 12px 7px 7px 7px;
-    font-family: Academy Engraved LET;
-    position: absolute;
-    bottom: 10px;
-} */
+
 .foooo {
-    position: absolute;
-    bottom: -40px;
+    position: fixed;
+    bottom: 0px;
     left: 0;
     width: 100%;
     font-size: 20px;
