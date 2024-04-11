@@ -18,6 +18,7 @@ urlpatterns = [
     path('fantaro/create/',views.CreatePhotoView.as_view(),name='create'),
     path('fantaro/<int:pk>/detail/delete/',views.DeletePhotoView.as_view(),name='delete'),
     path('fantaro/<int:photo_id>/review/',views.CreateReviewView.as_view(),name='review'),
+    path('toggle_like/<int:photo_id>/', views.toggle_like, name='toggle_like'),
 
 
 ]

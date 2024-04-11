@@ -8,7 +8,86 @@
 </head>
 <body>
 <div class="left">
-    <img src="{{ object.photo.url }}">
+    <div class="outer-border">
+        <img src="{{ object.photo.url }}">
+    </div>
+    <div class='like'>
+        <form id="like-form" action="{% url 'fanta:toggle_like' photo_id=object.id %}" method="POST">
+            {% csrf_token %}
+            <button id="like-count-button" style="border: none; background-color: transparent; cursor: pointer;">
+                {% if request.user in likes_users %}
+                    ❤️
+                {% else %}
+                    ♡
+                {% endif %} : {{ object.likes.count }}
+            </button>
+        </form>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'accounts:login' %}" >ログインはこちら</a>
+        {% endif %}
+        <script>
+            // サーバーから返されたデータを元に、いいねの数を更新する関数
+            function updateLikeCount(data) {
+                document.querySelector('#like-count-button').innerText = (data.liked ? '❤️' : '♡') + ' : ' + data.likes_count;
+            }
+        
+            // サーバーから返されたデータを元に、いいねの状態を更新する関数
+            function updateLikeStatus(data) {
+                const likeButton = document.querySelector('#like-button');
+                if (data.liked) {
+                    likeButton.textContent = '❤️';
+                    likeButton.dataset.liked = 'true';
+                } else {
+                    likeButton.textContent = '♡';
+                    likeButton.dataset.liked = 'false';
+                }
+            }
+        
+            // いいねボタンがクリックされたときの処理
+            document.querySelector('#like-form').addEventListener('submit', function(event) {
+                event.preventDefault();  // フォームのデフォルトの動作をキャンセル
+        
+                // フォームのデータを送信
+                fetch(this.action, {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRFToken': this.querySelector('[name=csrfmiddlewaretoken]').value,
+                    },
+                    body: new FormData(this),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // いいねの数を更新
+                    updateLikeCount(data);
+        
+                    // いいねの状態を更新
+                    updateLikeStatus(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        
+            // ページ読み込み時に初期状態を設定
+            document.addEventListener('DOMContentLoaded', function() {
+                // サーバーからデータを取得して初期状態を設定
+                fetch(document.querySelector('#like-form').action)
+                    .then(response => response.json())
+                    .then(data => {
+                        // いいねの数を更新
+                        updateLikeCount(data);
+        
+                        // いいねの状態を更新
+                        updateLikeStatus(data);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        </script>
+    </div>
+
 </div>
 <div class="right">
     <menu>

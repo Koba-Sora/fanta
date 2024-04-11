@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 serect = (
         ('sekai','世界'),
@@ -31,3 +32,7 @@ class Review(models.Model):
     
     def __str__(self):
         return self.text
+    
+class Like(models.Model):
+    photo = models.ForeignKey(Photo, related_name='likes', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
